@@ -1,0 +1,44 @@
+---
+title: "Untitled"
+author: "Marin Lolic"
+date: "8/2/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(BART)
+```
+
+```{r}
+Movies <- read_csv("movies.csv")
+Movies <- Movies[ , c('audience_score','critics_score','critics_rating', 'thtr_rel_month')]
+Movies <- mutate(Movies, Rating = ifelse(critics_rating == "Rotten", 0, 1))
+```
+
+```{r}
+x <- Movies[, c('audience_score','critics_score')]
+y <- Movies[, 'Rating']
+
+xtrain <- as.data.frame(x)
+ytrain <- as.matrix(y)
+```
+
+
+```{r}
+set.seed(1)
+
+Model1 <- lbart(xtrain, ytrain, x.test = xtrain)
+```
+
+```{r}
+Real_Y <- as.data.frame(y)
+Pred_Y <- as.data.frame(Model1$prob.train.mean)
+
+Combined <- as.data.frame(cbind(Real_Y, Pred_Y))
+```
+
