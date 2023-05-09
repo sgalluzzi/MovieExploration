@@ -1,12 +1,13 @@
 # MovieExploration
 Exploring the making of magnificent movies!
-Aim
+
+## Aim
 “You gotta watch it! It’s an instant classic! I don’t care what Rotten Tomatoes says.”
-- Coworker, every two months about the movie ‘Infinite’
+  - Coworker, every two months about the movie ‘Infinite’
 “Did you see the new Top Gun movie? That Tom Cruise is so handsome.”
-- Grandma, three times in the same conversation
+  - Grandma, three times in the same conversation
 “What should we watch tonight?”
-- Girlfriend, every night - usually followed by “What should we eat.”
+  - Girlfriend, every night - usually followed by “What should we eat.”
 Selecting the perfect movie to watch has become somewhat of a tradition in American culture.
 Sifting through various streaming services, trying to find that one title that is right is an agonizing
 and tedious process that most would rather avoid. During this process, it is common to search
@@ -28,7 +29,8 @@ characteristics associated with the Tomatometer, and to use Bayesian statistics 
 models that can predict Tomatometer score. Hopefully, we can then use our insight to better
 determine what movies are good and what movies are bad, making the movie selection process
 a lot less painful.
-Executive Summary
+
+## Executive Summary
 We tackle the problem of defining a probability distribution for our outcome variable: the critics’
 rating of a particular film. More specifically, we will categorize each movie using the critics_score
 variable, which uses three ratings, each summarized above: Rotten, Fresh, and Certified Fresh.
